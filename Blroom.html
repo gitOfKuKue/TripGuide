@@ -1,0 +1,232 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>
+   PathFinder
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+
+
+  <style>
+
+
+  /* Styles for iPhone 14 and 14 Pro Max */
+  @media screen and (max-width: 430px) {
+      h1 {
+          font-size: 1.75rem; /* Adjust title font size */
+      }
+      .text-xl {
+          font-size: 1rem; /* Adjust subheading size */
+      }
+      .text-2xl {
+          font-size: 1.25rem; /* Adjust other headings */
+      }
+      .text-lg {
+          font-size: 1rem;
+      }
+      .p-2 {
+          padding: 0.4rem; /* Adjust padding for buttons */
+      }
+      .w-80 {
+          width: 100%; /* Adjust button width */
+      }
+      .max-w-full {
+          max-width: 100%; /* Full width for sections */
+      }
+      .mx-10 {
+          margin-left: 1rem; /* Narrow horizontal margins */
+          margin-right: 1rem;
+      }
+      .w-64 {
+          width: 100%; /* Full width for input fields */
+      }
+      .max-w-md {
+          max-width: 100%; /* Ensure image section fits */
+      }
+  }
+
+  body {
+            font-family: 'Lato', sans-serif;
+        }
+        .lato-regular {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+  
+  </style>
+ </head>
+ <div class="flex">
+    <img src="./image/IMG_3418.svg" alt="" class="w-17 h-17 ml-1">
+    <img src="./image/Vector (1).svg" alt="" class="w-17 h-17 ml-auto mr-[0.5cm]" id="menu-toggle">
+  </div>
+  
+  <!-- Menu Box -->
+  <div id="menu-box" class="hidden absolute right-8 mt-2 w-40 bg-white border border-green-200 shadow-lg rounded-lg">
+    
+    <ul>
+      <li><a href="Home.html" class="block px-4 py-2 hover:bg-green-100">Home</a></li>
+      <li><a href="Ebikepage.html" class="block px-4 py-2 hover:bg-green-100">E Bike For Rent</a></li>
+      <li><a href="LuggageServicepage.html" class="block px-4 py-2 hover:bg-green-100">Luggage Service</a></li>
+      <li><a href="carstationfinding.html" class="block px-4 py-2 hover:bg-green-100">Car Stations</a></li>
+      <li><a href="AboutUs.html" class="block px-4 py-2 hover:bg-green-100">About Us</a></li>
+    </ul>
+  </div>
+  
+  
+ <body class="lato-regular bg-white">
+
+    <div class="max-w-md mx-auto bg-white shadow-md rounded-lg overflow-hidden mt-5">
+        <h1 class="ml-[0.5cm] text-2xl font-bold mb-4">
+            Bagan Lodge Hotel
+        </h1>
+        <div class="p-4">
+            <!-- Deluxe King Room -->
+            <div class="bg-white rounded-lg shadow-md mb-6">
+                <div class="border-2 border-[#B8EFC5] p-4 rounded-lg"> <!-- Added green border and padding -->
+                    <img alt="Deluxe King Room" class="w-full h-50 object-cover rounded-lg" height="400" src="./image/32956869.svg" width="600"/>
+                
+                <div class="p-4">
+                    <h2 class="text-xl font-bold mb-1">
+                        Deluxe King Room
+                    </h2>
+                    <p class="text-[#737373] text-sm mb-2"> <!-- Added text-sm to make it smaller -->
+                        Non-Refundable
+                    </p>
+                    <p class="text mb-2">
+                        - Price for 2 Adults
+                    </p>
+                    <p class="text mb-2">
+                        - Room size: 14x14
+                    </p>
+                    
+                    <ul class="text-green-600 mb-2">
+                        <li>
+                            <div class="flex items-center">
+                            <img src="./image/ri_cup-fill.svg" alt="" height="25px" width="25px">
+                            <p class="p-2">Breakfast included in the price</p>
+                        </div>
+                        </li>
+                        <li>
+                            <div class="flex items-center">
+                            <img src="./image/icon-park-outline_tub.svg" alt="" height="25px" width="25px">
+                            <p class="p-2">Private bathroom</p>
+                        </div>
+                        </li>
+                        <li>
+                            <div class="flex items-center">
+                            <img src="./image/material-symbols_wifi.svg" alt="" height="25px" width="25px">
+                           <p class="p-2">Free WiFi</p>
+                        </div>
+                        </li>
+                        <li>
+                            <div class="flex items-center">
+                            <img src="./image/mdi_hot-cold.svg" alt="" height="25px" width="25px">
+                            <p class="p-2">Air conditioning</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <p class="text-gray-600 mb-2">
+                        Price per night
+                    </p>
+                    <p class="text-2xl font-bold text-green-600 mb-2">
+                        $25.00
+                    </p>
+                    <p class="text-gray-600 mb-4">
+                        +$0.5 taxes and fees
+                    </p>
+                    <button class="w-full bg-green-500 text-white py-2 rounded-lg">
+                        SELECT
+                    </button>
+                </div>
+            </div>
+            </div>
+    
+            <!-- Luxury Family Room -->
+            <div class="bg-white rounded-lg shadow-md">
+                <div class="border-2 border-[#B8EFC5] p-4"> <!-- Added green border and padding -->
+                    <img alt="Luxury Family Room" class="w-full h-50 object-cover rounded-lg" height="400" src="./image/515521_16083115410045965634.svg" width="600"/>
+                
+                <div class="p-4">
+                    <h2 class="text-xl font-bold mb-2">
+                        Luxury Family Room
+                    </h2>
+                    <p class="text-[#737373] text-sm mb-2"> <!-- Added text-sm to make it smaller -->
+                        Non-Refundable
+                    </p>
+                    <p class="text mb-2">
+                        - Price for 2 Adults, 2 Childern
+                    </p>
+                    <p class="text mb-2">
+                        - 1 Extra-large double bed
+                    </p>
+                    <p class="text mb-2">
+                        - Room size: 54x84
+                    </p>
+                    
+                    <ul class="text-green-600 mb-2">
+                        <li>
+                            <div class="flex items-center">
+                            <img src="./image/ri_cup-fill.svg" alt="" height="25px" width="25px">
+                            <p class="p-2">Breakfast included in the price</p>
+                        </div>
+                        </li>
+                        <li>
+                            <div class="flex items-center">
+                            <img src="./image/icon-park-outline_tub.svg" alt="" height="25px" width="25px">
+                            <p class="p-2">Private bathroom</p>
+                        </div>
+                        </li>
+                        <li>
+                            <div class="flex items-center">
+                            <img src="./image/material-symbols_wifi.svg" alt="" height="25px" width="25px">
+                           <p class="p-2">Free WiFi</p>
+                        </div>
+                        </li>
+                        <li>
+                            <div class="flex items-center">
+                            <img src="./image/mdi_hot-cold.svg" alt="" height="25px" width="25px">
+                            <p class="p-2">Air conditioning</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <p class="text-gray-600 mb-2">
+                        Price per night
+                    </p>
+                    <p class="text-2xl font-bold text-green-600 mb-2">
+                        $75.00
+                    </p>
+                    <p class="text-gray-600 mb-4">
+                        +$0.5 taxes and fees
+                    </p>
+                    <button class="w-full bg-green-500 text-white py-2 rounded-lg">
+                        SELECT
+                    </button>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    
+   
+      
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+  const menuBox = document.getElementById('menu-box');
+  menuBox.style.display = menuBox.style.display === 'none' || !menuBox.style.display ? 'block' : 'none';
+});
+
+    </script>
+  
+ </body>
+</html>

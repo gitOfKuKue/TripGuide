@@ -1,0 +1,232 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>
+   PathFinder
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+
+
+  <style>
+
+
+  /* Styles for iPhone 14 and 14 Pro Max */
+  @media screen and (max-width: 430px) {
+      h1 {
+          font-size: 1.75rem; /* Adjust title font size */
+      }
+      .text-xl {
+          font-size: 1rem; /* Adjust subheading size */
+      }
+      .text-2xl {
+          font-size: 1.25rem; /* Adjust other headings */
+      }
+      .text-lg {
+          font-size: 1rem;
+      }
+      .p-2 {
+          padding: 0.4rem; /* Adjust padding for buttons */
+      }
+      .w-80 {
+          width: 100%; /* Adjust button width */
+      }
+      .max-w-full {
+          max-width: 100%; /* Full width for sections */
+      }
+      .mx-10 {
+          margin-left: 1rem; /* Narrow horizontal margins */
+          margin-right: 1rem;
+      }
+      .w-64 {
+          width: 100%; /* Full width for input fields */
+      }
+      .max-w-md {
+          max-width: 100%; /* Ensure image section fits */
+      }
+  }
+
+  body {
+            font-family: 'Lato', sans-serif;
+        }
+        .lato-regular {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+  
+  </style>
+ </head>
+ <div class="flex">
+    <img src="./image/IMG_3418.svg" alt="" class="w-17 h-17 ml-1">
+    <img src="./image/Vector (1).svg" alt="" class="w-17 h-17 ml-auto mr-[0.5cm]" id="menu-toggle">
+  </div>
+  
+  <!-- Menu Box -->
+  <div id="menu-box" class="hidden absolute right-8 mt-2 w-40 bg-white border border-green-200 shadow-lg rounded-lg">
+    
+    <ul>
+      <li><a href="Home.html" class="block px-4 py-2 hover:bg-green-100">Home</a></li>
+      <li><a href="Ebikepage.html" class="block px-4 py-2 hover:bg-green-100">E Bike For Rent</a></li>
+      <li><a href="LuggageServicepage.html" class="block px-4 py-2 hover:bg-green-100">Luggage Service</a></li>
+      <li><a href="carstationfinding.html" class="block px-4 py-2 hover:bg-green-100">Car Stations</a></li>
+      <li><a href="AboutUs.html" class="block px-4 py-2 hover:bg-green-100">About Us</a></li>
+    </ul>
+  </div>
+  
+  
+ <body class="lato-regular bg-white">
+
+    <div class="relative bg-white rounded-lg shadow-lg max-w-md w-full">
+    <img alt="Hotel front view at night with lights and palm trees" class="rounded-t-lg w-full" height="400" src="./image/21937783.svg" width="600"/>
+    <div class="relative p-6 bg-white rounded-t-lg shadow-lg -mt-6 z-10 ml-[0.5cm] mr-[0.5cm]">
+     <h1 class="text-2xl font-bold mb-2">
+        Thiripyitsaya Hotel
+     </h1>
+     <div class="inline-flex items-center mb-4 bg-[#F0F8FF] rounded-lg px-2 py-1">
+        <span class="bg-white-100 text-black text-sm font-medium px-2.5 py-0.5 rounded mr-2">
+          Hotel
+        </span>
+        <div class="flex items-center">
+          <i class="fas fa-star text-yellow-500"></i>
+          <i class="fas fa-star text-yellow-500"></i>
+          <i class="fas fa-star text-yellow-500"></i>
+          <i class="fas fa-star text-yellow-500"></i>
+          <i class="fas fa-star text-yellow-500"></i>
+        </div>
+      </div>
+      
+     <div class="flex items-center text-gray-600 mb-4">
+      <i class="fas fa-map-marker-alt mr-2">
+      </i>
+      <span>
+        Bagan Archaeological Zon, Bagan Nyaung Oo, Old Bagan, Myanmar
+      </span>
+     </div>
+     <hr class="my-4"/>
+     <div class="flex justify-between items-center mb-4">
+      <h2 class="text-lg font-semibold">
+       Ratings and reviews
+      </h2>
+      <a class="text-green-600 text-sm font-medium" href="#">
+       View all
+       <i class="fas fa-chevron-right">
+       </i>
+      </a>
+     </div>
+     <div class="flex items-center mb-4">
+      <span class="text-4xl font-bold text-green-600 mr-2">
+       8.5
+      </span>
+      <div>
+       <span class="text-green-600 font-semibold">
+        Impressive
+       </span>
+       <p class="text-gray-500 text-sm">
+        From 308 reviews
+       </p>
+      </div>
+     </div>
+     <div class="flex flex-wrap gap-2 mb-4">
+      <span class="bg-gray-100 text-gray-700 text-sm font-medium px-3 py-1 rounded-full">
+       Clean room (16)
+      </span>
+      <span class="bg-gray-100 text-gray-700 text-sm font-medium px-3 py-1 rounded-full">
+       Friendly staffs (7)
+      </span>
+      <span class="bg-gray-100 text-gray-700 text-sm font-medium px-3 py-1 rounded-full">
+       Excellent service (5)
+      </span>
+     </div>
+     <h3 class="text-lg font-semibold mb-2">
+      Top reviews
+     </h3>
+     <div class="space-y-4">
+      <div class="bg-gray-100 p-4 rounded-lg">
+       <p class="text-gray-700 mb-2">
+        The scenery, great service of the team . Best place to stay while exploring the bagan heritage.
+
+       </p>
+       <p class="text-gray-500 text-sm">
+        Nguyen V.A.
+       </p>
+      </div>
+      <div class="bg-gray-100 p-4 rounded-lg">
+       <p class="text-gray-700 mb-2">
+        Thiri Pyitsaya Hotel boasts stunning river views and a peaceful atmosphere, perfect for relaxing after temple explorations. The spacious rooms and friendly service add to the charm of this riverside retreat.
+
+       <p class="text-gray-500 text-sm">
+        Tran V.B.
+       </p>
+      </div>
+     </div>
+     <div class="max-w-md mx-auto bg-white rounded-lg shadow-md p-4">
+        <div class="border-b border-gray-200 pb-4 mb-4">
+            <div class="flex justify-between items-center">
+                <h2 class="text-lg font-semibold">Facilities</h2>
+                <a href="#" class="text-green-500 text-sm">view all <i class="fas fa-chevron-right"></i></a>
+            </div>
+            <div class="flex flex-wrap mt-4">
+                <span class="border border-gray-400 text-gray-700 rounded-full px-4 py-2 m-1">Restaurant</span>
+                <span class="border border-gray-400 text-gray-700 rounded-full px-4 py-2 m-1">24 hour front desk</span>
+                <span class="border border-gray-400 text-gray-700 rounded-full px-4 py-2 m-1">Swimming pool</span>
+                <span class="border border-gray-400 text-gray-700 rounded-full px-4 py-2 m-1">Wifi</span>
+            </div>
+            
+        </div>
+        <div class="border-b border-gray-200 pb-4 mb-4">
+            <h2 class="text-lg font-semibold">Check-in/Check-out time</h2>
+            <div class="flex items-center mt-4">
+                <i class="fas fa-clock text-gray-500 mr-2"></i>
+                <span class="text-gray-700">Check-in time</span>
+                <span class="ml-auto text-gray-700">before <span class="font-semibold">11:00</span></span>
+            </div>
+            <div class="flex items-center mt-2">
+                <i class="fas fa-clock text-gray-500 mr-2"></i>
+                <span class="text-gray-700">Check-out time</span>
+                <span class="ml-auto text-gray-700">before <span class="font-semibold">11:00</span></span>
+            </div>
+        </div>
+        <div class="border-b border-gray-200 pb-4 mb-4">
+            <h2 class="text-lg font-semibold">Hotel description</h2>
+            <p class="text-gray-700 mt-4">
+                Bagan Thiripyitsaya Sanctuary Resort is a 2-minute walk from Irrawaddy Riverside. Offering air-conditioned rooms with free Wi-Fi, the resort features a spa, pool and laundry service. Free public parking is possible on site.
+            </p>
+            <div class="flex justify-center mt-2">
+                <a href="#" class="text-green-500 text-sm">View more <i class="fas fa-chevron-down"></i></a>
+            </div>
+        </div>
+        
+        <div class="border-b border-gray-200 pb-4 mb-4">
+            <div class="flex justify-between items-center">
+                <span class="text-gray-700">Price/room/night starts from</span>
+                <span class="text-green-500 text-2xl font-semibold">$25.00</span>
+            </div>
+            <span class="text-gray-500 text-sm ml-[5.2cm] mt-[0.5cm]">Taxes are included</span>
+        </div>
+        <button class="w-full bg-green-500 text-white py-3 rounded-lg font-semibold">Select</button>
+    </div>
+    </div>
+    
+   </div>
+   
+      
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+  const menuBox = document.getElementById('menu-box');
+  menuBox.style.display = menuBox.style.display === 'none' || !menuBox.style.display ? 'block' : 'none';
+});
+
+    </script>
+  
+ </body>
+</html>

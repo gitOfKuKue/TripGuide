@@ -1,0 +1,34 @@
+<form action="./test.html" method="post">
+    <div class="mt-6 text-center">
+        <!-- Dropdown -->
+        <select class="text-center p-2 rounded-md mb-2 w-64 text-[#357443] bg-white border border-[#357443] leading-tight focus:outline-none focus:border-blue-500 mx-auto">
+            <option selected hidden disabled>Where to?</option>
+            <option value="myanmar">Myanmar</option>
+            <option value="cambodia">Cambodia</option>
+            <option value="vietnam">Vietnam</option>
+            <option value="laos">Laos</option>
+            <option value="thailand">Thailand</option>
+        </select>
+        <br>
+    
+        <!-- Date Input -->
+        <input 
+            class="p-2 rounded-md mb-2 w-64 text-center bg-white border border-[#357443] text-[#357443] mx-auto" 
+            placeholder="Check-In Check-Out" 
+            onfocus="(this.type='date'); this.oldValue = this.value;" 
+            onblur="(this.type='text'); if(this.value === '') { this.value = this.oldValue; }"
+        />
+        <br>
+    
+        <!-- Search Button -->
+        <button class="bg-[#55B76B] text-white p-2 rounded-md w-64 mx-auto">
+            <img src="./image/Searchbuttno.svg" alt="" style="margin: auto;">
+        </button>
+    
+        <!-- Grey Line Below Button -->
+        <div class="border-b border-gray-400 my-4 w-70 mx-auto"></div>
+    
+        <!-- Description Text -->
+        <p class="text-m text-[#357443] mx-auto">"Discover Sustainability” Your Eco-Friendly Haven for Conscious Travelling."</p>
+    </div>
+</form>

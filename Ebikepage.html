@@ -1,0 +1,222 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>
+   PathFinder
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+  <style>
+
+
+  /* Styles for iPhone 14 and 14 Pro Max */
+  @media screen and (max-width: 430px) {
+      h1 {
+          font-size: 1.75rem; /* Adjust title font size */
+      }
+      .text-xl {
+          font-size: 1rem; /* Adjust subheading size */
+      }
+      .text-2xl {
+          font-size: 1.25rem; /* Adjust other headings */
+      }
+      .text-lg {
+          font-size: 1rem;
+      }
+      .p-2 {
+          padding: 0.4rem; /* Adjust padding for buttons */
+      }
+      .w-80 {
+          width: 100%; /* Adjust button width */
+      }
+      .max-w-full {
+          max-width: 100%; /* Full width for sections */
+      }
+      .mx-10 {
+          margin-left: 1rem; /* Narrow horizontal margins */
+          margin-right: 1rem;
+      }
+      .w-64 {
+          width: 100%; /* Full width for input fields */
+      }
+      .max-w-md {
+          max-width: 100%; /* Ensure image section fits */
+      }
+  }
+
+  body {
+            font-family: 'Lato', sans-serif;
+        }
+        .lato-regular {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+  
+  </style>
+ </head>
+ <div class="flex">
+  <img src="./image/IMG_3418.svg" alt="" class="w-17 h-17 ml-1">
+  <img src="./image/Vector (1).svg" alt="" class="w-17 h-17 ml-auto mr-[0.5cm]" id="menu-toggle">
+</div>
+
+<!-- Menu Box -->
+<div id="menu-box" class="hidden absolute right-8 mt-2 w-40 bg-white border border-green-200 shadow-lg rounded-lg">
+  
+  <ul>
+    <li><a href="Home.html" class="block px-4 py-2 hover:bg-green-100">Home</a></li>
+    <li><a href="Ebikepage.html" class="block px-4 py-2 hover:bg-green-100">E Bike For Rent</a></li>
+    <li><a href="LuggageServicepage.html" class="block px-4 py-2 hover:bg-green-100">Luggage Service</a></li>
+    <li><a href="carstationfinding.html" class="block px-4 py-2 hover:bg-green-100">Car Stations</a></li>
+    <li><a href="AboutUs.html" class="block px-4 py-2 hover:bg-green-100">About Us</a></li>
+  </ul>
+</div>
+  
+ <body class="lato-regular bg-white">
+    
+    <div class="text-center mb-6">
+        <h1 class="text-green-600 text-2xl font-bold">E-bike</h1>
+        <h2 class="text-gray-800 text-xl">
+          Near you for
+          <span class="text-green-600">rent</span>
+        </h2>
+      </div>
+      
+      <div class="flex justify-between items-center mb-4 ml-4 mr-4">
+        <span class="text-gray-800 text-lg">Nearby</span>
+        <span class="text-green-600 text-lg">Location</span>
+      </div>
+      
+      <div class="grid grid-cols-2 gap-6 px-4"> <!-- px-4 adds 1cm of padding on left and right -->
+        <!-- First Grid Item -->
+        <div class="border border-green-200 p-4 rounded-lg bg-white w-full h-[320px]">
+          <img alt="Red Honda Beat scooter" class="w-full h-40 object-cover mb-4" src="./image/IMG_3385.svg" />
+          <h3 class="text-gray-800 text-lg font-bold">Honda Beat</h3>
+          <p class="text-[#8A8A8E] mb-2"><i class="fas fa-map-marker-alt"></i> 21st street PTT Station</p>
+          <div class="flex justify-between items-center">
+            <span class="text-gray-800 text-lg font-bold">$20/day</span>
+            <button class="bg-green-600 text-white p-2 rounded-full">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      
+        <!-- Second Grid Item -->
+        <div class="border border-green-200 p-4 rounded-lg bg-white w-full h-[320px]">
+          <img alt="Blue Super Soco scooter" class="w-full h-40 object-cover mb-4" src="./image/IMG_3384.svg" />
+          <h3 class="text-gray-800 text-lg font-bold">Super Soco</h3>
+          <p class="text-[#8A8A8E] mb-2"><i class="fas fa-map-marker-alt"></i> 19th street PathFinder</p>
+          <div class="flex justify-between items-center">
+            <span class="text-gray-800 text-lg font-bold">$22/day</span>
+            <button class="bg-green-600 text-white p-2 rounded-full">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      
+
+        <!-- Additional grid items follow the same structure as above, each with the same height and width -->
+      </div>
+      <br>
+
+      <div class="grid grid-cols-2 gap-6 px-4"> <!-- px-4 adds 1cm of padding on left and right -->
+        <!-- First Grid Item -->
+        <div class="border border-green-200 p-4 rounded-lg bg-white w-full h-[320px]">
+          <img alt="Red Honda Beat scooter" class="w-full h-40 object-cover mb-4" src="./image/IMG_3382.svg" />
+          <h3 class="text-gray-800 text-lg font-bold">e-Ludix</h3>
+          <p class="text-[#8A8A8E] mb-2"><i class="fas fa-map-marker-alt"></i> MegaCom Store</p>
+          <div class="flex justify-between items-center">
+            <span class="text-gray-800 text-lg font-bold">$25/day</span>
+            <button class="bg-green-600 text-white p-2 rounded-full">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      
+        <!-- Second Grid Item -->
+        <div class="border border-green-200 p-4 rounded-lg bg-white w-full h-[320px]">
+          <img alt="Blue Super Soco scooter" class="w-full h-40 object-cover mb-4" src="./image/IMG_3383.svg" />
+          <h3 class="text-gray-800 text-lg font-bold">Pinky Vespa</h3>
+          <p class="text-[#8A8A8E] mb-2"><i class="fas fa-map-marker-alt"></i> Golden Hotel</p>
+          <div class="flex justify-between items-center">
+            <span class="text-gray-800 text-lg font-bold">$30/day</span>
+            <button class="bg-green-600 text-white p-2 rounded-full">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      
+        <!-- Additional grid items follow the same structure as above, each with the same height and width -->
+      </div>
+
+      <br>
+
+
+      <div class="grid grid-cols-2 gap-6 px-4"> <!-- px-4 adds 1cm of padding on left and right -->
+        <!-- First Grid Item -->
+        <div class="border border-green-200 p-4 rounded-lg bg-white w-full h-[320px]">
+          <img alt="Red Honda Beat scooter" class="w-full h-40 object-cover mb-4" src="./image/IMG_3455.svg" />
+          <h3 class="text-gray-800 text-lg font-bold">Classic Bike</h3>
+          <p class="text-[#8A8A8E] mb-2"><i class="fas fa-map-marker-alt"></i>1st street PTT Station</p>
+          <div class="flex justify-between items-center">
+            <span class="text-gray-800 text-lg font-bold">$15/day</span>
+            <button class="bg-green-600 text-white p-2 rounded-full">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      
+        <!-- Second Grid Item -->
+        <div class="border border-green-200 p-4 rounded-lg bg-white w-full h-[320px]">
+          <img alt="Blue Super Soco scooter" class="w-full h-40 object-cover mb-4" src="./image/IMG_3456.svg" />
+          <h3 class="text-gray-800 text-lg font-bold">Huffy</h3>
+          <p class="text-[#8A8A8E] mb-2"><i class="fas fa-map-marker-alt"></i>Lotte Hotel</p>
+          <br>
+          <div class="flex justify-between items-center">
+            <span class="text-gray-800 text-lg font-bold">$13/day</span>
+            <button class="bg-green-600 text-white p-2 rounded-full">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      
+        <!-- Additional grid items follow the same structure as above, each with the same height and width -->
+      </div>
+
+      <br>
+
+      <div class="grid grid-cols-2 gap-6 px-4"> <!-- px-4 adds 1cm of padding on left and right -->
+        <!-- First Grid Item -->
+        <div class="border border-green-200 p-4 rounded-lg bg-white w-full h-[320px]">
+          <img alt="Red Honda Beat scooter" class="w-full h-40 object-cover mb-4" src="./image/IMG_3454.svg" />
+          <h3 class="text-gray-800 text-lg font-bold">Dynacraft</h3>
+          <p class="text-[#8A8A8E] mb-2"><i class="fas fa-map-marker-alt"></i>MegaCom Store</p>
+          <div class="flex justify-between items-center">
+            <span class="text-gray-800 text-lg font-bold">$21/day</span>
+            <button class="bg-green-600 text-white p-2 rounded-full">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+  const menuBox = document.getElementById('menu-box');
+  menuBox.style.display = menuBox.style.display === 'none' || !menuBox.style.display ? 'block' : 'none';
+});
+
+    </script>
+  
+  
+ </body>
+</html>

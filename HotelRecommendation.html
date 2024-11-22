@@ -1,0 +1,340 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>
+   PathFinder
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+
+
+  <style>
+    .marker {
+            position: absolute;
+            font-size: 24px;
+            color: #34d399; /* Green for the location icon */
+        }
+        .markercircle {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            background-color: #54B175;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .markercircle::after {
+            content: '';
+            width: 12px;
+            height: 12px;
+            background-color: white;
+            border-radius: 50%;
+        }
+        .circle {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: rgba(52, 211, 153, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .circle .marker {
+            width: 36px;
+            height: 36px;
+        }
+        .circle .marker::after {
+            width: 18px;
+            height: 18px;
+        }
+
+
+  /* Styles for iPhone 14 and 14 Pro Max */
+  @media screen and (max-width: 430px) {
+      h1 {
+          font-size: 1.75rem; /* Adjust title font size */
+      }
+      .text-xl {
+          font-size: 1rem; /* Adjust subheading size */
+      }
+      .text-2xl {
+          font-size: 1.25rem; /* Adjust other headings */
+      }
+      .text-lg {
+          font-size: 1rem;
+      }
+      .p-2 {
+          padding: 0.4rem; /* Adjust padding for buttons */
+      }
+      .w-80 {
+          width: 100%; /* Adjust button width */
+      }
+      .max-w-full {
+          max-width: 100%; /* Full width for sections */
+      }
+      .mx-10 {
+          margin-left: 1rem; /* Narrow horizontal margins */
+          margin-right: 1rem;
+      }
+      .w-64 {
+          width: 100%; /* Full width for input fields */
+      }
+      .max-w-md {
+          max-width: 100%; /* Ensure image section fits */
+      }
+  }
+
+
+  body {
+            font-family: 'Lato', sans-serif;
+        }
+        .lato-regular {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+  
+  </style>
+ </head>
+ <div class="flex">
+    <img src="./image/IMG_3418.svg" alt="" class="w-17 h-17 ml-1">
+    <img src="./image/Vector (1).svg" alt="" class="w-17 h-17 ml-auto mr-[0.5cm]" id="menu-toggle">
+  </div>
+  
+  <!-- Menu Box -->
+  <div id="menu-box" class="hidden absolute right-8 mt-2 w-40 bg-white border border-green-200 shadow-lg rounded-lg">
+    
+    <ul>
+      <li><a href="Home.html" class="block px-4 py-2 hover:bg-green-100">Home</a></li>
+      <li><a href="Ebikepage.html" class="block px-4 py-2 hover:bg-green-100">E Bike For Rent</a></li>
+      <li><a href="LuggageServicepage.html" class="block px-4 py-2 hover:bg-green-100">Luggage Service</a></li>
+      <li><a href="carstationfinding.html" class="block px-4 py-2 hover:bg-green-100">Car Stations</a></li>
+      <li><a href="AboutUs.html" class="block px-4 py-2 hover:bg-green-100">About Us</a></li>
+    </ul>
+  </div>
+  
+  
+ <body class="lato-regular bg-white">
+
+    <div class="max-w-md mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
+        <div class="relative">
+            <!-- Map Image -->
+            <img 
+                alt="Map showing hotel locations" 
+                class="w-full h-50 object-cover" 
+                height="268px" 
+                src="./image/IMG_3643.svg" 
+                width="400"
+            />
+            
+            <!-- Search Icon in Top Left -->
+            <div class="absolute top-0 left-0 p-4">
+                <div class="bg-white p-2 rounded-full shadow-md">
+                    <i class="fas fa-search text-gray-600"></i>
+                </div>
+            </div>
+        
+            <!-- Icon Button Base in Top Right -->
+            <div class="absolute top-0 right-0 p-4">
+                <img src="./image/Icon Button Base.svg" alt="Icon Button Base" />
+            </div>
+        
+            <!-- Actions Icon in Bottom Right -->
+            <div class="absolute bottom-0 right-0 p-4">
+                <img src="./image/Actions.svg" alt="Actions Icon" />
+            </div>
+        </div>
+        <div class="flex items-center justify-center p-4">
+        <img src="./image/IosIcon.svg" alt="">
+        </div>
+        
+        <div class="p-4">
+         <div class="flex justify-between items-center mb-4">
+          <h2 class="text-lg font-semibold">
+           Hotels recommendation for you
+          </h2>
+          <a class="text-[#55B76B]" href="#">
+           See all
+          </a>
+         </div>
+         <div class="space-y-4">
+            <div class="flex items-center bg-white shadow-md rounded-lg overflow-hidden">
+                <!-- Image with Rounded Corners -->
+                <img 
+                    alt="Bagan Heritage Hotel" 
+                    class="w-28 h-23 object-cover rounded-lg" 
+                    height="100" 
+                    src="./image/IMG_3649.svg" 
+                    width="100"
+                />
+                <div class="p-4">
+                    <h3 class="text-2xl text-[#336749] font-semibold -mt-3 mb-1">
+                        Bagan Heritage Hotel
+                        <br>
+                        <p class="text-sm text-[#6C757D]">Jl. Sunset Road No. 101, Bagan , Myanmar</p>
+                    </h3>
+                    <p class="text-gray-600">
+                        5.0
+                        <i class="fas fa-star text-yellow-500"></i>
+                        (318 reviews)
+                    </p>
+                    <p class="absolute -mt-[0.55cm] right-6 text-green-600 text-sm">
+                        $25/night
+                    </p>
+                </div>
+            </div>
+            
+            <div class="flex items-center bg-white shadow-md rounded-lg overflow-hidden">
+                <!-- Image with Rounded Corners -->
+                <img 
+                    alt="Bagan Lodge" 
+                    class="w-28 h-23 object-cover rounded-lg" 
+                    height="100" 
+                    src="./image/IMG_3644.svg" 
+                    width="100"
+                />
+                <div class="p-4">
+                    <h3 class="text-2xl text-[#336749] font-semibold -mt-3 mb-4">
+                        Bagan Lodge Hotel
+                        <br>
+                        <p class="text-sm text-[#6C757D]">Shwe Road, New Bagan , Myanmar</p>
+                    </h3>
+                    <p class="text-gray-600">
+                        5.0
+                        <i class="fas fa-star text-yellow-500"></i>
+                        (308 reviews)
+                    </p>
+                    <p class="absolute -mt-[0.55cm] right-6 text-green-600 text-sm">
+                        $25/night
+                    </p>
+                </div>
+            </div>
+            <div class="flex items-center bg-white shadow-md rounded-lg overflow-hidden">
+                <!-- Image with Rounded Corners -->
+                <img 
+                    alt="Tharabar Gate Bagan" 
+                    class="w-28 h-23 object-cover rounded-lg" 
+                    height="100" 
+                    src="./image/IMG_3646 (1).svg" 
+                    width="100"
+                />
+                <div class="p-4">
+                    <h3 class="text-2xl text-[#336749] font-semibold -mt-3 mb-1">
+                        Tharabar Gate Bagan
+                        <br>
+                        <p class="text-sm text-[#6C757D]">CJ. Sunset Road No. 11, Kuta, Bagan , Myanmar</p>
+                    </h3>
+                    <p class="text-gray-600">
+                        4.8
+                        <i class="fas fa-star text-yellow-500"></i>
+                        (284 reviews)
+                    </p>
+                    <p class="absolute -mt-[0.55cm] right-6 text-green-600 text-sm">
+                        $22/night
+                    </p>
+                </div>
+            </div>
+            <div class="flex items-center bg-white shadow-md rounded-lg overflow-hidden">
+                <!-- Image with Rounded Corners -->
+                <img 
+                    alt="Thiripyitsaya Hotel" 
+                    class="w-28 h-23 object-cover rounded-lg" 
+                    height="100" 
+                    src="./image/IMG_3647.svg" 
+                    width="100"
+                />
+                <div class="p-4">
+                    <h3 class="text-2xl text-[#336749] font-semibold -mt-3 mb-1">
+                        Thiripyitsaya Hotel
+                        <br>
+                        <p class="text-sm text-[#6C757D]">No. 11, Near Mountain Kuta, Bagan , Myanmar</p>
+                    </h3>
+                    <p class="text-gray-600">
+                        4.8
+                        <i class="fas fa-star text-yellow-500"></i>
+                        (184 reviews)
+                    </p>
+                    <p class="absolute -mt-[0.55cm] right-6 text-green-600 text-sm">
+                        $20/night
+                    </p>
+                </div>
+            </div>
+         </div>
+        </div>
+
+        <hr class="block border border-1 border-[#6C757D33] w-full mt-2 md:mt-4" style="width: 95% !important;">
+
+        <div class="mt-6 flex justify-left space-x-4 ml-[1cm]">
+            <a href="#" class="text-gray-600"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-gray-600"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-gray-600"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-gray-600"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <div class="mt-6 grid grid-cols-2 gap-6 ml-[1cm]">
+            <div>
+                <h3 class="font-semibold">Company</h3>
+                <ul class="mt-2 space-y-2">
+                    <li><a href="#" class="text-gray-600">About Us</a></li>
+                    <li><a href="#" class="text-gray-600">Media Kit</a></li>
+                    <li><a href="#" class="text-gray-600">Partner</a></li>
+                    <li><a href="#" class="text-gray-600 flex items-center">Job Offer <span class="ml-2 bg-green-100 text-green-600 text-xs font-semibold px-2 py-0.5 rounded">New</span></a></li>
+                    <li><a href="#" class="text-gray-600 flex items-center">Contact Us <i class="fas fa-external-link-alt ml-1 text-xs"></i></a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-semibold">Travelling</h3>
+                <ul class="mt-2 space-y-2">
+                    <li><a href="#" class="text-gray-600">Reward</a></li>
+                    <li><a href="#" class="text-gray-600">Our Green Community</a></li>
+                    <li><a href="#" class="text-gray-600">Special Offers</a></li>
+                    <li><a href="#" class="text-gray-600 flex items-center">Blogs <span class="ml-2 bg-green-100 text-green-600 text-xs font-semibold px-2 py-0.5 rounded">New</span></a></li>
+                    <li><a href="#" class="text-gray-600 flex items-center">Eco-sustainability <i class="fas fa-external-link-alt ml-1 text-xs"></i></a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-semibold">Support</h3>
+                <ul class="mt-2 space-y-2">
+                    <li><a href="#" class="text-gray-600">Contact</a></li>
+                    <li><a href="#" class="text-gray-600 flex items-center">Email Support <i class="fas fa-external-link-alt ml-1 text-xs"></i></a></li>
+                    <li><a href="#" class="text-gray-600 flex items-center">Live Chat <i class="fas fa-external-link-alt ml-1 text-xs"></i></a></li>
+                    <li><a href="#" class="text-gray-600">Phone Support</a></li>
+                    <li><a href="#" class="text-gray-600 flex items-center">Community <i class="fas fa-external-link-alt ml-1 text-xs"></i></a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-semibold">Terms & Privacy</h3>
+                <ul class="mt-2 space-y-2">
+                    <li><a href="#" class="text-gray-600">Terms of Uses</a></li>
+                    <li><a href="#" class="text-gray-600">Privacy Policy</a></li>
+                    <li><a href="#" class="text-gray-600">Cookie Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mt-6 text-center border-t border-gray-200 pt-6">
+            <p class="text-gray-600">English  •  Privacy  •  Legal</p>
+            <p class="text-[#A6A7AB] mt-2">© 2024 OR SEEDS MMG1. All Rights Reserved.</p>
+        </div>
+
+        </div>
+
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+  const menuBox = document.getElementById('menu-box');
+  menuBox.style.display = menuBox.style.display === 'none' || !menuBox.style.display ? 'block' : 'none';
+});
+
+    </script>
+  
+ </body>
+</html>

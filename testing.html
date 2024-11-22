@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PathFinder Interface</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-green-100 font-sans">
+    <div class="flex flex-col items-center justify-center min-h-screen bg-green-100">
+        <!-- Header -->
+        <div class="text-center">
+            <h1 class="text-3xl font-bold text-green-600">Welcome to <span class="text-green-800">PathFinder</span></h1>
+            <p class="text-lg text-green-700 mt-2">Find Your Sustainable <span class="font-semibold">Accommodation</span></p>
+        </div>
+
+        <!-- Search Box -->
+        <div class="mt-6 bg-white shadow-lg rounded-lg p-6 w-96">
+            <div>
+                <input 
+                    type="text" 
+                    placeholder="Where to?" 
+                    class="w-full border border-gray-300 rounded-lg px-4 py-2 mb-4 focus:ring focus:ring-green-300 focus:outline-none"
+                />
+                <input 
+                    type="text" 
+                    placeholder="Check In - Check Out" 
+                    class="w-full border border-gray-300 rounded-lg px-4 py-2 mb-4 focus:ring focus:ring-green-300 focus:outline-none"
+                />
+                <button 
+                    class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 rounded-lg focus:outline-none"
+                >
+                    Search
+                </button>
+            </div>
+        </div>
+
+        <!-- Footer Icons -->
+        <div class="flex justify-center mt-6 space-x-6">
+            <!-- Icons with labels -->
+            <div class="text-center">
+                <div class="bg-green-200 rounded-full p-4 text-green-600">
+                    <!-- Icon (Use HeroIcons or other icon libraries) -->
+                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v9l3-3m-3 3l-3-3m3 3V3M6 21h12" />
+                    </svg>
+                </div>
+                <p class="text-sm mt-2 text-green-700">Stations</p>
+            </div>
+
+            <div class="text-center">
+                <div class="bg-green-200 rounded-full p-4 text-green-600">
+                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h8m-4-4v8" />
+                    </svg>
+                </div>
+                <p class="text-sm mt-2 text-green-700">Hotels</p>
+            </div>
+
+            <div class="text-center">
+                <div class="bg-green-200 rounded-full p-4 text-green-600">
+                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10l7-7m0 0h4a1 1 0 011 1v16a1 1 0 01-1 1h-4l-7-7m0 0a1 1 0 011-1h12a1 1 0 011 1m-13 1v-8" />
+                    </svg>
+                </div>
+                <p class="text-sm mt-2 text-green-700">Luggage</p>
+            </div>
+
+            <div class="text-center">
+                <div class="bg-green-200 rounded-full p-4 text-green-600">
+                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </div>
+                <p class="text-sm mt-2 text-green-700">Ebike</p>
+            </div>
+
+            <div class="text-center">
+                <div class="bg-green-200 rounded-full p-4 text-green-600">
+                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16l4-4-4-4m0 8h8" />
+                    </svg>
+                </div>
+                <p class="text-sm mt-2 text-green-700">Packages</p>
+            </div>
+        </div>
+
+        <!-- Footer Note -->
+        <p class="text-sm text-green-600 mt-4 italic">"Discover Sustainability" Your Eco-Friendly Haven for Conscious Travelling.</p>
+    </div>
+</body>
+</html>

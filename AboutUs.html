@@ -1,0 +1,222 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>
+   PathFinder
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+  <style>
+  /* Styles for iPhone 14 and 14 Pro Max */
+  @media screen and (max-width: 430px) {
+      h1 {
+          font-size: 1.75rem; /* Adjust title font size */
+      }
+      .text-xl {
+          font-size: 1rem; /* Adjust subheading size */
+      }
+      .text-2xl {
+          font-size: 1.25rem; /* Adjust other headings */
+      }
+      .text-lg {
+          font-size: 1rem;
+      }
+      .p-2 {
+          padding: 0.4rem; /* Adjust padding for buttons */
+      }
+      .w-80 {
+          width: 100%; /* Adjust button width */
+      }
+      .max-w-full {
+          max-width: 100%; /* Full width for sections */
+      }
+      .mx-10 {
+          margin-left: 1rem; /* Narrow horizontal margins */
+          margin-right: 1rem;
+      }
+      .w-64 {
+          width: 100%; /* Full width for input fields */
+      }
+      .max-w-md {
+          max-width: 100%; /* Ensure image section fits */
+      }
+  }
+
+  body {
+            font-family: 'Lato', sans-serif;
+        }
+        .lato-regular {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+  
+  </style>
+ </head>
+ <div class="flex">
+    <img src="./image/IMG_3418.svg" alt="" class="w-17 h-17 ml-1">
+    <img src="./image/Vector (1).svg" alt="" class="w-17 h-17 ml-auto mr-[0.5cm]" id="menu-toggle">
+  </div>
+  
+  <!-- Menu Box -->
+  <div id="menu-box" class="hidden absolute right-8 mt-2 w-40 bg-white border border-green-200 shadow-lg rounded-lg">
+    
+    <ul>
+      <li><a href="Home.html" class="block px-4 py-2 hover:bg-green-100">Home</a></li>
+      <li><a href="Ebikepage.html" class="block px-4 py-2 hover:bg-green-100">E Bike For Rent</a></li>
+      <li><a href="LuggageServicepage.html" class="block px-4 py-2 hover:bg-green-100">Luggage Service</a></li>
+      <li><a href="carstationfinding.html" class="block px-4 py-2 hover:bg-green-100">Car Stations</a></li>
+      <li><a href="AboutUs.html" class="block px-4 py-2 hover:bg-green-100">About Us</a></li>
+    </ul>
+  </div>
+  
+ <body class="lato-regular bg-white">
+    <div class="bg-white rounded-lg shadow-lg p-8 w-365px mx-auto border border-green-200">
+        <h1 class="text-2xl font-bold text-center mb-4">
+         About Us
+        </h1>
+        <div class="flex justify-center mb-4">
+         <img alt="Illustration of a person hugging the Earth, symbolizing care for the environment" class="w-64 h-64" height="200" src="./image/love the earth 1.svg" width="300"/>
+        </div>
+        <p class="text-gray-700 text-center">
+         At
+         <span class="text-green-600 font-bold">
+          Pathfinder
+         </span>
+         , our goal is to transform travel into a sustainable and fulfilling experience for Gen Z. We aim to provide eco-friendly options that make it easy for travelers to explore responsibly—without compromising on quality or convenience. By offering green accommodations, e-bike rentals, and sustainable travel essentials, we’re building a community of travelers who care about the planet. Together, let’s make every journey a step toward a greener world.
+        </p>
+       </div>
+
+  <section class="py-8 px-4">
+   <h2 class="text-2xl font-bold text-center mb-4">
+    Why Choose
+    <span class="text-green-500">
+     PathFinder
+    </span>
+    ?
+   </h2>
+   <div class="flex flex-col items-center">
+    <div class="flex flex-col items-center mb-6">
+     <img alt="Icon representing eco-friendly choices" class="w-110px h-110px mb-2" height="100" src="./image/Group 4.svg" width="100"/>
+     <h3 class="font-bold text-lg text-[#448553]">
+      Eco-Friendly Choices
+     </h3>
+     <p class="text-center">
+        Pathfinder makes sustainable travel easy by offering eco-conscious options like green transport and eco-certified accommodations, helping travelers reduce their impact on the environment.
+     </p>
+    </div>
+    <div class="flex flex-col items-center mb-6">
+     <img alt="Icon representing high quality services" class="w-24 h-24 mb-2" height="100" src="./image/Group 5.svg" width="100"/>
+     <h3 class="font-bold text-lg text-[#448553]">
+      High Quality Services
+     </h3>
+     <p class="text-center">
+        We partner with trusted providers to ensure reliable services like luggage delivery and rentals, offering a seamless, worry-free experience.
+     </p>
+    </div>
+    <div class="flex flex-col items-center mb-6">
+     <img alt="Icon representing sustainable products" class="w-24 h-24 mb-2" height="100" src="./image/Group 6.svg" width="100"/>
+     <h3 class="font-bold text-lg text-[#448553]">
+      Sustainable Products
+     </h3>
+     <p class="text-center">
+        Pathfinder offers eco-friendly travel essentials, from reusable bottles to sustainable gear, for travelers committed to minimizing their impact.
+     </p>
+    </div>
+   </div>
+  </section>
+  <div class="w-20 h-0.5 bg-[#C7E6CE80] m-auto"></div>
+  
+  <section class="bg-white py-8 px-4">
+   <h2 class="text-2xl font-bold text-center mb-4">
+    Our 10 main
+    <br>
+    <span class="text-green-500">
+     Sustainability criteria
+    </span>
+   </h2>
+   <div class="grid grid-cols-2 gap-4 text-center">
+    <div>
+     <img alt="Icon representing 100% renewable energy" class="w-12 h-12 mx-auto mb-2" height="50" src="./image/PlugCharging.svg" width="50"/>
+     <p>
+      100% Renewable Energy
+     </p>
+    </div>
+    <div>
+     <img alt="Icon representing organic or local food" class="w-12 h-12 mx-auto mb-2" height="50" src="./image/Avocado.svg" width="50"/>
+     <p>
+      Organic or Local Food
+     </p>
+    </div>
+    <div>
+     <img alt="Icon representing solar thermal panels" class="w-12 h-12 mx-auto mb-2" height="50" src="./image/SolarPanel.svg" width="50"/>
+     <p>
+      Solar thermal panels for hot water
+     </p>
+    </div>
+    <div>
+     <img alt="Icon representing ecological cleaning products" class="w-12 h-12 mx-auto mb-2" height="50" src="./image/Broom.svg" width="50"/>
+     <p>
+      Ecological cleaning products
+     </p>
+    </div>
+    <div>
+     <img alt="Icon representing recovery and reuse of rainwater" class="w-12 h-12 mx-auto mb-2" height="50" src="./image/CloudRain.svg" width="50"/>
+     <p>
+      Recovery &amp; reuse of rainwater
+     </p>
+    </div>
+    <div>
+     <img alt="Icon representing water flow reducers" class="w-12 h-12 mx-auto mb-2" height="50" src="./image/Drop (1).svg" width="50"/>
+     <p>
+      Water flow reducers
+     </p>
+    </div>
+    <div>
+     <img alt="Icon representing green building" class="w-12 h-12 mx-auto mb-2" height="50" src="./image/Garage.svg" width="50"/>
+     <p>
+      Green building
+     </p>
+    </div>
+    <div>
+     <img alt="Icon representing energy saving lights" class="w-12 h-12 mx-auto mb-2" height="50" src="./image/LightbulbFilament.svg" width="50"/>
+     <p>
+      Energy saving lights
+     </p>
+    </div>
+    <div>
+     <img alt="Icon representing more than 75% waste recycling" class="w-12 h-12 mx-auto mb-2" height="50" src="./image/Recycle.svg" width="50"/>
+     <p>
+      More than 75% waste recycling
+     </p>
+    </div>
+    <div>
+     <img alt="Icon representing eco-friendly transport" class="w-12 h-12 mx-auto mb-2" height="50" src="./image/Bus.svg" width="50"/>
+     <p>
+      Eco-friendly transport
+     </p>
+    </div>
+   </div>
+  </section>
+
+  <script>
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+const menuBox = document.getElementById('menu-box');
+menuBox.style.display = menuBox.style.display === 'none' || !menuBox.style.display ? 'block' : 'none';
+});
+
+</script>
+
+  
+  
+ </body>
+</html>

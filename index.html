@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- tailwind css  -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- fontawesome cdn js  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- lato font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .card {
+        width: 500px;
+        height: 300px;
+    }
+
+    .lato-thin {
+        font-family: "Lato", sans-serif;
+        font-weight: 100;
+        font-style: normal;
+    }
+
+    .lato-light {
+        font-family: "Lato", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+    }
+
+    .lato-regular {
+        font-family: "Lato", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    .lato-bold {
+        font-family: "Lato", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+    }
+
+    .lato-black {
+        font-family: "Lato", sans-serif;
+        font-weight: 900;
+        font-style: normal;
+    }
+
+    .lato-thin-italic {
+        font-family: "Lato", sans-serif;
+        font-weight: 100;
+        font-style: italic;
+    }
+
+    .lato-light-italic {
+        font-family: "Lato", sans-serif;
+        font-weight: 300;
+        font-style: italic;
+    }
+
+    .lato-regular-italic {
+        font-family: "Lato", sans-serif;
+        font-weight: 400;
+        font-style: italic;
+    }
+
+    .lato-bold-italic {
+        font-family: "Lato", sans-serif;
+        font-weight: 700;
+        font-style: italic;
+    }
+
+    .lato-black-italic {
+        font-family: "Lato", sans-serif;
+        font-weight: 900;
+        font-style: italic;
+    }
+
+    .rectangle-1 {
+        width: 50px;
+        height: 30px;
+        background: linear-gradient(270deg, rgba(206, 205, 205, 0.5) 0%, rgba(0, 0, 0, 0) 70%);
+        position: absolute;
+        background-color: white;
+        bottom: 3.7rem;
+        left: -1.5rem;
+    }
+
+    .rectangle-2 {
+        width: 50px;
+        height: 30px;
+        background: linear-gradient(80deg, rgba(206, 205, 205, 0.5) 0%, rgba(0, 0, 0, 0) 70%);
+        background-color: white;
+        position: absolute;
+        bottom: 3.7rem;
+        right: -1.5rem;
+    }
+
+
+    @media screen and (max-width: 515px) {
+        .card {
+            width: 100%;
+            height: 100%;
+        }
+
+        .rectangle-1, .rectangle-2 {
+            bottom: 3.3rem;
+        }
+    }
+</style>
+
+<body>
+
+    <div class="container mx-auto">
+        <!-- <h1>hello</h1> -->
+
+        <div class="flex items-center justify-center w-100 p-5 md:p-10 ">
+            <!-- card start here  -->
+            <div class="card border border-2 rounded border-slate pt-6 pb-2 px-8 flex items-center 
+            justify-start flex-col gap-5 rounded-xl shadow-lg position-relative relative">
+
+                <button class="w-full border border-1 border-[#357443] p-2 rounded-lg">
+                    <span class="text-[#55B76B] lato-regular">Where to?</span>
+                </button>
+
+                <button class="w-full border border-1 border-[#357443] p-2 rounded-lg">
+                    <span class="text-[#55B76B] lato-regular">Check In - Check Out</span>
+                </button>
+
+                <button class="w-full bg-[#55B76B] p-2 rounded-lg">
+                    <i class="fas fa-search text-white" style="font-size: 20px;"></i>
+                </button>
+
+                <hr class="block border border-1 border-[#6C757D33] w-full mt-2 md:mt-4" style="width: 95% !important;">
+
+                <p class="text-[#357443] lato-regular text-center" style="font-size: 12.5px;">"Discover Sustainability”
+                    Your Eco-Friendly
+                    Haven for Conscious Travelling.</p>
+
+                <div class="rectangle-1 rounded-3xl border-[#6C757D33] border-r-2"></div>
+                <div class="rectangle-2 rounded-3xl border-[#6C757D33] border-l-2"></div>
+            </div>
+            <!-- card end here  -->
+        </div>
+
+    </div>
+
+</body>
+
+</html>
